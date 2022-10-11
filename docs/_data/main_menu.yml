@@ -1,0 +1,4 @@
+- label: Core
+  items:
+    - name: Index
+      link: /docs/core

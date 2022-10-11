@@ -1,0 +1,23 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"diagnostics": true,
+		"tsBuildInfoFile": "dist/.tsbuildinfo",
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"outDir": "dist",
+		"rootDir": "src",
+		"composite": true,
+		"removeComments": false,
+		"skipLibCheck": false,
+	},
+	"include": [
+		"src/**/*"
+	],
+	"exclude": [
+		"node_modules",
+		"tests",
+		"src/examples"
+	]
+}

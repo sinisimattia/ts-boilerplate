@@ -1,0 +1,68 @@
+title: My awesome project
+url: your_website
+baseurl: https://example.com
+logo:
+favicon:
+lang: en
+
+theme: jekyll-theme-opentoolbox
+
+repository: your_username/repo_name
+
+show_downloads: false
+
+show_sidebar: true
+
+permalink: /posts/:title
+
+links:
+  feedback:
+  pull_requests:
+  discussions:
+  rules:
+  source:
+  contributors:
+
+markdown: kramdown
+fenced_code_blocks: true
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    default_lang: html
+    css_class   : 'highlight'
+
+footer_menu: footer_menu
+fixed_navbar: top
+
+paginate: 5
+paginate_path: "/blog/page:num"
+
+# Set plugins here to make it compatible with GitHub pages.
+plugins:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-environment-variables
+  - jekyll-mentions
+  - jekyll-target-blank
+  - jekyll-redirect-from
+
+whitelist:
+  - jekyll-redirect-from
+
+jekyll-mentions:
+  base_url: https://github.com
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+      show_sidebar: false
+  - scope:
+      path: "docs/*"
+    values:
+      layout: resource
+      menubar: main_menu
+      banner_height: is-small

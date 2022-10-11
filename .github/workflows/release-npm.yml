@@ -1,0 +1,38 @@
+name: NPM Release
+
+on:
+  release:
+    types: [created]
+  push:
+    tags:
+      - '*'
+
+jobs:
+  publish-npm:
+    name: Build, test & publish!
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Node.js Setup
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          registry-url: https://registry.npmjs.org/
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('npm-shrinkwrap.json') }}
+          restore-keys: npm-
+      - name: Installing directly from source-tree
+        run: npm ci
+      - name: Running unit tests
+        run: npm test
+      - name: Building the package
+        run: npm run build
+      - name: Publishing!
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
