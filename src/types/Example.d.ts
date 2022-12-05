@@ -1,5 +1,5 @@
 /*
- * You MUST delcare your types in this folder to
+ * You MUST declare your types in this folder to
  * properly compile them and make them usable.
  */
 
