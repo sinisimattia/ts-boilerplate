@@ -1,4 +1,4 @@
-const sum = (a, b) => a + b
+import sum from '@/helpers/sum'
 
 // Main package exports
 export {
